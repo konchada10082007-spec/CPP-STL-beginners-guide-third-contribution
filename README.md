@@ -217,6 +217,8 @@ for (auto num : numbers) {
 
 The `foreach` loop is a great way to make your code more concise and readable. It's especially useful for working with vectors.
 
+
+
 ### Iterators
 
 #### C++ Vector Iterators : Vector iterators are powerful tools for accessing and manipulating elements within a vector. They act like pointers, but with additional functionalities specific to vector operations.
@@ -653,6 +655,14 @@ This allows creating complex data structures easily.
 
 Overall, pairs provide a simple way to handle two elements together in situations where using a custom class would be overhead.
 
+✅ Advantages:
+Simple way to store two related values.
+Can be used as keys/values in other STL containers.
+No need to create a separate class for simple key-value pairs.
+❌ Disadvantages:
+Limited to two elements only.
+Not suitable for complex objects with many attributes.
+
 ---
 
 ---
@@ -765,6 +775,13 @@ The queue provides a convenient FIFO data structure useful in many algorithms an
 ---
 
 ---
+✅ Advantages:
+Follows FIFO principle.
+Simple insertion at back, deletion from front.
+Efficient for BFS, task scheduling, or streaming data.
+❌ Disadvantages:
+Cannot access elements in the middle directly.
+Less flexible than deque for front/back insertion.
 
 # Deque
 
@@ -837,6 +854,14 @@ for (int i = 0; i < dq.size(); ++i) {
     cout << dq[i] << " ";
 }
 ```
+✅ Advantages:
+Double-ended queue: fast insertion/removal at both ends.
+Supports random access like a vector.
+Flexible for both stack and queue operations.
+❌ Disadvantages:
+Slightly slower random access than vector.
+More complex memory allocation (sequence of arrays).
+
 
 ---
 
@@ -863,6 +888,7 @@ These functions provide more flexibility and control over the deque container.
 The deque provides flexibility of vectors and queues together while enabling fast inserts and deletes at both ends. This makes it useful in algorithms requiring dynamic collections.
 
 ---
+
 
 ---
 
@@ -1002,6 +1028,13 @@ else {
   // not balanced
 }
 ```
+✅ Advantages:
+Follows LIFO principle.
+Simple and efficient for reversing, parsing expressions, recursion simulation.
+Only top element is accessible, reduces errors.
+❌ Disadvantages:
+Cannot access elements other than top.
+Fixed access pattern limits flexibility.
 
 ---
 
@@ -1085,7 +1118,7 @@ for(auto s : database) {
 ## Struct vs Class
 
 -   Members and base classes in structs are public by default while private in classes.
--   Structs can't inherit other structs/classes (no hierarchy) while classes can.
+-   Structs can inherit like classes, but their members are public by default.
 
 Good for simple data holders without encapsulation needs.
 
@@ -1214,6 +1247,14 @@ Get size of the set
 |find() |	O(log n)|
 |lower_bound()|	O(log n)|
 |iteration|	O(n)|
+Set
+✅ Advantages:
+Stores unique and sorted elements automatically.
+Fast search, insertion, and deletion: O(log n).
+Supports range queries (lower_bound/upper_bound).
+❌ Disadvantages:
+Slower than unordered_set for simple lookups.
+Extra memory for tree structure (Red-Black tree).
 
 
 # Map
@@ -1341,6 +1382,14 @@ Get size of the map
 |delete() |	O(log n)|	
 |Search() |	O(log n)|
 
+
+✅ Advantages:
+Stores key-value pairs with sorted keys.
+Unique keys with fast O(log n) search/insertion.
+Useful for counting/frequency maps.
+❌ Disadvantages:
+Slower than unordered_map for simple access.
+Tree structure adds memory overhead.
 # Priority Queue 
 ## Basic Characteristics
  - **Container Adaptor**: Built on top of vectors/deques (default: vector)
@@ -1383,6 +1432,13 @@ Get size of the map
   if(!max_pq.empty()) {
     cout << "Elements count: " << max_pq.size();
   }
+✅ Advantages:
+Efficient max-heap/min-heap operations.
+Top element is always the highest/lowest priority.
+Useful for scheduling, Dijkstra’s, or Huffman coding.
+❌ Disadvantages:
+Cannot iterate directly over all elements.
+Limited access: only top element is accessible.
 ```
 
 
